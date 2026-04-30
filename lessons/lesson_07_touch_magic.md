@@ -151,6 +151,7 @@ void loop() {
 - **Make a mini piano** — map four touch pads to four different notes. Pin 1 → C4, pin 2 → E4, pin 3 → G4, pin 6 → C5. Touch each pad to play its note.
 - **Color chooser** — each pad selects a different color for the whole ring. The last pad touched "wins."
 - **Touch alarm** — normally the ring glows dim white. When pad 9 is touched, flash all pixels red and play a loud, fast tone.
+- **Copper tape extension** — get a strip of copper tape from the supplies and press one end firmly against one of the gold touch pads on the board. Route the tape across a piece of paper or cardboard and touch the far end. Does `readCap()` still detect your finger? (You may need to raise the threshold — try 100 or 150 instead of 50 for an extended surface.)
 - **Challenge:** Create a "hold to brighten" behavior — the longer you hold a pad (keeping checking `readCap()` and counting how many loops pass), the brighter the ring gets. Release to reset.
 
 ## Wrap-Up (~5 min)
@@ -193,6 +194,16 @@ MINI PIANO (Make It Yours):
   Consider setting a class expectation: "make your sound, then hold off while others listen."
 - Note: the tones are blocking. If a student holds two pads, only one tone plays —
   whichever if-branch runs first. This limitation is real and worth discussing if it comes up.
+
+COPPER TAPE EXTENSION:
+- The Maker Space copper tape works well as a capacitive touch extension.
+  Press one end firmly against the gold pad on the board (pin 2 is easiest) and secure it
+  with a small piece of regular tape to hold it in contact.
+- The threshold will need to increase — a longer copper run means higher baseline capacitance.
+  Have students print the idle value with Serial Monitor and set their threshold ~50 above it.
+- Common extension ideas students will invent: paper piano keys, touch-sensitive drawings,
+  "secret button" hidden under a piece of paper, conductive fabric patches.
+- Alligator clips can also clip directly to the edge of a touch pad for a quicker connection.
 
 PACING:
 - Step 3 (add a sound) is where the lesson really clicks. Prioritize getting there.

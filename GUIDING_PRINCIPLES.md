@@ -37,6 +37,26 @@ The library's Hello World moment is a single function call that lights up an LED
 
 ---
 
+## Physical Environment
+
+The class meets in a **Maker Space**, which has direct bearing on what projects
+are achievable and how the final lessons should be framed.
+
+| Resource | Relevance to this series |
+|----------|-------------------------|
+| **Copper tape** | Extends capacitive touch to any conductive surface. Students can route a strip from a touch pad to a drawing, a cardboard cutout, a piece of foil — anything that conducts. The `readCap()` threshold typically needs to be raised (try 100–200) for extended surfaces, since more copper = more capacitance. |
+| **Hookup wire / alligator clips** | Same extension capability as copper tape; useful for connecting pads to objects at a distance. |
+| **Craft supplies** (cardboard, foam, fabric, paper) | Students can embed the Circuit Playground into a physical object — a stuffed animal, a box, a wearable. The board's small size makes it easy to hide inside a creation. |
+| **3D printer / laser cutter** | Available but students in this course have not had explicit training. A student with a strong reason (an enclosure shape that can't be made from cardboard) may use one with appropriate supervision and coordination. Not expected; not promoted as a default. |
+
+**Key implication for Lessons 8–9:** Students should be encouraged to think about
+what their device *looks like physically*, not just what it *does in code*.
+A touch instrument is more compelling when the pads are copper-tape keys on a paper keyboard.
+A creature is more alive when it lives inside a cardboard body.
+The project brief (Lesson 8) explicitly asks for a physical form.
+
+---
+
 ## Entry Approach: Output First
 
 Students call one function and something happens on the physical board before
@@ -95,8 +115,8 @@ blocked — but the *capabilities* learned are all available for the capstone.
 | 5 | Give It a Voice | Output beyond light: tone, frequency, duration | `playTone(freq, duration)` | Makes sounds and simple melodies |
 | 6 | Play a Song | Named constants (`#define`), music as data, sequential execution | `playTone()` called in sequence with defined note/duration constants | Plays a recognizable song |
 | 7 | Touch Magic | A new input modality; comparing input to trigger output | `readCap(pad)` on pins 0, 1, 2, 3, 6, 9, 10, 12 | Responds to finger touch |
-| 8 | Putting It Together | Combining multiple concepts; designing behavior | All prior features | Reacts, lights up, and sounds based on multiple inputs simultaneously |
-| 9 | Capstone | Synthesis and design; student choice | All features | Student's original creation |
+| 8 | Finding Your Project | Design thinking; translating ideas into "when…then…" behaviors; choosing an archetype | All prior features (review) | A committed project brief |
+| 9 | Build Your Project | Scaffolded independent build; using an AI assistant for syntax help | Archetype scaffold of student's choice | Student's finished, demo-ready device |
 
 ### Bonus Lessons (self-contained, insertable after Lesson 3)
 
@@ -136,10 +156,18 @@ regardless of how tempting.
    "This is called a variable" comes *after* students have written one and
    changed it to see what happens.
 
-7. **Do not let the capstone be fully open-ended.**
-   Lesson 9 provides a menu of design constraints students choose from
-   (e.g., "react to at least two different sensors," "include sound and light").
-   Open choice within a defined structure prevents paralysis and produces better work.
+7. **Do not let the final project be fully open-ended.**
+   Lesson 8 leads students through a structured ideation process that ends with a
+   written project brief before any code is written.  Lesson 9 provides archetype
+   scaffolds (five starting-point designs) so students choose a structure, not a
+   blank page.  Open choice within a scaffold prevents paralysis and produces better work.
+
+8. **AI assistants are a syntax tool, not a design tool.**
+   Students learn all concepts through Lessons 1–7.  In Lesson 9, AI tools
+   (MagicSchool, Flint) are explicitly introduced as a way to get unstuck on
+   syntax details the student already understands conceptually.  The framing is:
+   "You design. The AI writes syntax."  Students are taught to prompt with context
+   and to evaluate — not just paste — the answer they receive.
 
 8. **Do not introduce `class` or object-oriented patterns.**
    The `CircuitPlayground` object is used as a black box.  Students do not
@@ -264,6 +292,8 @@ Serial.println(value)                   Print a value to Serial Monitor.
 | Self-contained lessons (not cumulative starters) | Students miss class. A missed lesson should not block participation going forward. |
 | Sensors before sound | Sensors introduce the concept of *reading* a value, which makes `readCap()` in the touch lesson feel familiar rather than new. Sound is output-only and is more fun as a reward after students have mastered input. |
 | Two sound lessons (5 and 6) | Lesson 5 establishes `playTone()` with raw numbers. Lesson 6 introduces `#define` to name those numbers — the concept of *named constants* — by having students transcribe a real song. Splitting them ensures `#define` is motivated by felt pain ("440 means nothing to me") rather than presented abstractly. |
+| Lessons 8–9 split between ideation and building | Lesson 8 is entirely design work (no Arduino IDE). Students who skip ideation produce unfocused code and get stuck. Committing to a project brief before writing any code consistently produces better outcomes and faster builds. |
+| AI assistants introduced in Lesson 9, not earlier | Introducing AI tools before students have built their own mental model risks them becoming dependent on generated code they don't understand. By Lesson 9, students have written enough code to read and evaluate an AI's suggestion critically. |
 | Capacitive touch last (before capstone) | Touch is the most surprising and "magical" input modality — saving it builds anticipation and makes it a strong motivator for the capstone. |
 | No hex colors in early lessons | Hex notation introduces a second representation of the same concept. Students who are new to base-10 numeric ranges (0–255) don't need the added cognitive load of base-16. |
 | `map()` introduced with light sensor | `map()` is a function students will use constantly, and the light sensor provides a natural, concrete motivation: "the sensor gives 0–1023 but I want 0–255 for a color channel." |
