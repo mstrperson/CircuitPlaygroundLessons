@@ -29,6 +29,9 @@ void setup() {
   CircuitPlayground.begin();
   CircuitPlayground.setBrightness(30);
 
+}
+
+void loop() {
   // Mary Had a Little Lamb -- first phrase
   CircuitPlayground.playTone(e4, quarter);
   delay(50);
@@ -46,8 +49,6 @@ void setup() {
   delay(50);
 
   // YOUR SONG CONTINUES HERE
-}
 
-void loop() {
-  // song plays once in setup -- move it here if you want it to repeat
+  delay(1000); // pause for a moment before repeating the song
 }
